@@ -2,10 +2,18 @@ package godocsample
 
 import "fmt"
 
-// example of Add funtion, it will also execute and verify the output upon
-//    go test
-// will fail the tests if the output is not matched
-func ExampleAdd_testable() {
+//Package level example
+func Example() {
+	fmt.Println("Package level example")
+}
+
+//Package level example
+func Example_another() {
+	fmt.Println("Package level another example")
+}
+
+//Testable example of Add funtion
+func ExampleAdd() {
 	a := 10
 	b := 20
 	fmt.Println(Add(a, b))
@@ -26,14 +34,21 @@ func ExamplePerson() {
 	//Output: sudosapan
 }
 
-// example of Person method GetAge. notice the _ in the name
+// example of Person method GetAge
+func ExamplePerson_GetAge() {
+	person := &Person{Name: "sudosapan", birthyear: 2020}
+	fmt.Println(person.GetAge())
+	//Output: 1
+}
+
+// example of Person method GetAge
 func ExamplePerson_GetAge_test1() {
 	person := &Person{Name: "sudosapan", birthyear: 2020}
 	fmt.Println(person.GetAge())
 	//Output: 1
 }
 
-// example of Person method GetAge. notice the _ in the name
+// example of Person method GetAge
 func ExamplePerson_GetAge_test2() {
 	person := &Person{Name: "sudosapan", birthyear: 2020}
 	fmt.Println(person.GetAge())
